@@ -1,0 +1,47 @@
+.footer_heading{
+    font-weight: bold;
+    font-family:varela Round;
+}
+
+div .foot_fonts a{
+    color: gray;
+    font-size: 1rem;
+}
+
+div.foot_fonts {
+	text-align: center;
+}
+
+div .foot_fonts a:hover{
+    color: black;
+}
+div> .foot_fonts ul{
+    display: inline-block; 
+	text-align: left; 
+}
+div> .foot_fonts ul li{
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+} 
+
+.footer_branding{
+    color: blue;
+}
+
+@media screen and (max-width: 985px) {
+    div.foot_fonts {
+        text-align:left;
+    }
+    div> .foot_fonts ul{
+        display: inline;
+        text-align: left; 
+    }
+
+}
+@media screen and (max-width: 985px) {
+    div.social {
+        margin-bottom: 1rem;
+    }
+
+}
