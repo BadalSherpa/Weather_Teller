@@ -22,7 +22,7 @@ const Weather = (props) => {
         const response = await axios(
           "https://api.openweathermap.org/data/2.5/weather?q=" +
             props.location +
-            "&appid=28ed2c46c8acdc29953d126a4426b671"
+            "&appid=Process.env"
         );
         if (!ignore) setData(response.data);
       } catch (err) {
