@@ -13,6 +13,8 @@ const Weather = (props) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(true);
 
+  const [iconCode, setIconCode] = useState("");
+
   useEffect(() => {
     let ignore = false;
     const fetchProduct = async () => {
@@ -22,9 +24,14 @@ const Weather = (props) => {
         const response = await axios(
           "https://api.openweathermap.org/data/2.5/weather?q=" +
             props.location +
-            "&appid=Process.env"
+            "&units=metric" +
+            "&appid=" +
+            process.env.NEXT_PUBLIC_WEB_API
         );
-        if (!ignore) setData(response.data);
+        if (!ignore) {
+          setData(response.data);
+          setIconCode(response.data.weather[0].icon);
+        }
       } catch (err) {
         setError(true);
       }
@@ -36,17 +43,26 @@ const Weather = (props) => {
     };
   }, []);
 
+  var iconUrl = "http://openweathermap.org/img/w/" + iconCode + ".png";
+
   return error ? (
     <div>
       <Error location={props.location} />
     </div>
   ) : loading ? (
     <div>
-      <Spin size='large' style={{ margin: "50% 30%" }} />
+      <Spin size='large' style={{ margin: "5% 50%" }} />
     </div>
   ) : (
     <>
       <div style={{ textAlign: "center", margin: "10vh 10vw" }}>
+        <div>
+          <img
+            src={iconUrl}
+            style={{ height: "20vh" }}
+            alt='weather-teller-icon'
+          ></img>
+        </div>
         The temperature at {data.name} is {data.main.temp} degree celcious. It's{" "}
         {data.weather[0].description}
       </div>
@@ -54,6 +70,7 @@ const Weather = (props) => {
         <Button
           style={{ margin: "2vh 2vw", backgroundColor: "lightgreen" }}
           href='/'
+          size='large'
         >
           Check Weather Again
         </Button>

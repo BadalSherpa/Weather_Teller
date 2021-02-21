@@ -28,7 +28,11 @@ function HeaderListItem({ flexDirection }) {
           : styles.navigation_row
       }
     >
-      <ul className={styles.navigation_list} type='none'>
+      <ul
+        className={styles.navigation_list}
+        style={{ paddingInlineStart: "0" }}
+        type='none'
+      >
         <li>
           {flexDirection === "column" ? <ApartmentOutlined /> : null}
           <a href='/learning'>Home</a>
