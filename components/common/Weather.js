@@ -26,8 +26,9 @@ const Weather = (props) => {
             props.location +
             "&units=metric" +
             "&appid=" +
-            process.env.NEXT_PUBLIC_WEB_API
+            "28ed2c46c8acdc29953d126a4426b671"
         );
+        // process.env.NEXT_PUBLIC_WEB_API
         if (!ignore) {
           setData(response.data);
           setIconCode(response.data.weather[0].icon);
