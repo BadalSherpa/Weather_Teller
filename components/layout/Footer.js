@@ -105,7 +105,7 @@ const Footer = () => {
         <Col xl={6} lg={6} md={24} sm={24} xs={24}>
           <div className={styles.foot_fonts}>
             <ul style={{ listStyle: "none" }}>
-              <h2 className={styles.footer_heading}>COMPANY</h2>
+              <h2 className={styles.footer_heading}>WEBSITE</h2>
               <li>
                 <a>About</a>
               </li>

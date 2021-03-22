@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Error from "../common/Error";
 import { Spin, Button } from "antd";
@@ -55,7 +55,14 @@ const Weather = (props) => {
     </div>
   ) : (
     <>
-      <div style={{ textAlign: "center", margin: "10vh 10vw" }}>
+      <div
+        style={{
+          textAlign: "center",
+          margin: "10vh 10vw",
+          color: "green",
+          fontSize: "2rem",
+        }}
+      >
         <div>
           <img
             src={iconUrl}
@@ -63,8 +70,10 @@ const Weather = (props) => {
             alt='weather-teller-icon'
           ></img>
         </div>
-        The temperature at {data.name} is {data.main.temp} degree celcious. It's{" "}
-        {data.weather[0].description}
+        The temperature at{" "}
+        <span style={{ color: "pink", fontWeight: "bold" }}>{data.name}</span>{" "}
+        is {data.main.temp} degree celcious. It's {data.weather[0].description}
+        {console.log(data)}
       </div>
       <div style={{ textAlign: "center" }}>
         <Button

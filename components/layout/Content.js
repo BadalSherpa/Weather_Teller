@@ -23,7 +23,7 @@ const Content = (props) => {
       <Col xl={24} lg={34} md={24} sm={24} xs={24}>
         <div className={styles.login__form}>
           <h1>Weather Teller</h1>
-          <Title level={4}>Welcome back!</Title>
+          <Title level={4}>Welcome to the Weather Teller</Title>
           <Paragraph>
             Enter the location and I will tell you the weather my Friend!
           </Paragraph>
