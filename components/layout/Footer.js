@@ -40,7 +40,6 @@ const Footer = () => {
           xs={24}
         >
           <div className={styles.social}>
-            {/* <img width={80} src='/Weather_Teller-blue.png' /> */}
             <strong>
               <h1>Weather-Teller</h1>
             </strong>
